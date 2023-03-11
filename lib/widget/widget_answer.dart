@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  const Answer({Key? key}) : super(key: key);
+  final String title;
+  final isCorrect;
+  final Function onChangeAnswer;
+
+  const Answer({Key? key,
+    required this.title,
+    this.isCorrect,
+    required this.onChangeAnswer
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(
-        horizontal: 50.0,
-        vertical: 5.0,
-      ),
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        boxShadow: [BoxShadow(
-          color: Colors.black54,
-          blurRadius: 8.0,
-          offset: Offset(1.0, 1.0),
-        )],
-        color: Colors.amber,
-      ),
-      child: const Text(
-        'Ответ',
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white),
+    return GestureDetector(
+      onTap: () => onChangeAnswer(isCorrect),
+      child: Container(
+        margin: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          color: Colors.amber,
+          // border: Border.all(1),
+          // borderRadius: BorderRadius.circular(18.0),
+        ),
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }
