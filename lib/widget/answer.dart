@@ -27,10 +27,7 @@ class Answer extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(
-              //color: Colors.white,
-              fontSize: 25
-          ),
+          style: const TextStyle(fontSize: 25),
         ),
       ),
     );

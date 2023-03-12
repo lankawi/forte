@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:forte_v2/screens/test_easy_screen.dart';
-import 'package:forte_v2/screens/test_medium_screen.dart';
+import 'package:forte_v2/screens/tests/test_easy_screen.dart';
+import 'package:forte_v2/screens/tests/test_medium_screen.dart';
 
 class TestsScreen extends StatelessWidget {
   const TestsScreen({super.key});

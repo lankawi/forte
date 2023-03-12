@@ -21,7 +21,7 @@ class Quiz extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text(
             questionData.questions[index].title,
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 28),
           ),
         ),
 

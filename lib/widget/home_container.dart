@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../myapp_icons.dart';
-
 class HomeContainer extends StatelessWidget {
 
   final String text1;
   final String text2;
   final IconData iconka;
 
-  HomeContainer({Key? key,
+  const HomeContainer({Key? key,
     required this.text1,
     required this.text2,
     required this.iconka,
@@ -30,7 +28,7 @@ class HomeContainer extends StatelessWidget {
           Icon(iconka as IconData?, color: Colors.amber, size: 28,),
           Text(
             text1,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.amber,
               fontWeight: FontWeight.bold,
               fontSize: 25,
@@ -38,7 +36,7 @@ class HomeContainer extends StatelessWidget {
           ),
           Text(
             text2,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
               fontWeight: FontWeight.bold,
               fontSize: 25,

@@ -93,11 +93,11 @@ class _LoginScreenState extends State<LoginScreen> {
           onPressed: () {
             signIn(emailController.text, passwordController.text);
           },
-          child: Text(
+          child: const Text(
             "Войти",
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+                fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
           )),
     );
 
@@ -131,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text("Нет аккаунта? "),
+                          const Text("Нет аккаунта? ", style: TextStyle(fontSize: 28),),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
@@ -140,12 +140,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                       builder: (context) =>
                                           RegistrationScreen()));
                             },
-                            child: Text(
+                            child: const Text(
                               "Регистрация",
                               style: TextStyle(
                                   color: Colors.amber,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 15),
+                                  fontSize: 28),
                             ),
                           )
                         ])

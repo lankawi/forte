@@ -33,19 +33,11 @@ class Result extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: <Widget>[
-          Container(
-            // width: 120,
-            // height: 120,
-            child: const Icon(Myapp.trophy, color: Colors.amber, size: 100,),
-          ),
-          Container(
-            child: Text(
-              msg,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30,
-              ),
-            ),
+          const Icon(Myapp.trophy, color: Colors.amber, size: 100,),
+          Text(
+            msg,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 30,),
           ),
           const Divider(
             color: Colors.amber,
@@ -53,7 +45,7 @@ class Result extends StatelessWidget {
           ),
           Text(
             'Верных ответов: $count из $total',
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.brown,
                 fontSize: 25
             ),
@@ -65,25 +57,28 @@ class Result extends StatelessWidget {
 
           Center(
             child: TextButton(
+              onPressed: onClearState,
               child: Row(
-                children: [
+                children: const [
                   Icon(Icons.restart_alt, color: Colors.amber, size: 28,),
-                  Text(' Пройти тест ещё раз', style: TextStyle(fontSize: 28, color: Colors.amber),),
+                  Text(' Пройти тест ещё раз', style: TextStyle(color: Colors.amber, fontSize: 28),),
                 ],
               ),
-              onPressed: onClearState,),
+            ),
           ),
 
-          // Center(
-          //   child: TextButton(
-          //     child: Row(
-          //       children: [
-          //         Icon(Icons.home, color: Colors.amber, size: 28,),
-          //         Text(' На главную', style: TextStyle(fontSize: 25, color: Colors.amber),),
-          //       ],
-          //     ),
-          //     onPressed:() => HomeScreen(),),
-          // ),
+          GestureDetector(
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: Row(
+                children: const [
+                  Icon(Myapp.home, size: 28, color:Colors.amber),
+                  Text(' Главная страница', style: TextStyle(color: Colors.amber, fontSize: 28),),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

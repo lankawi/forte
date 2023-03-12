@@ -6,7 +6,7 @@ import 'package:forte_v2/widget/progress_bar.dart';
 import 'package:forte_v2/widget/quiz.dart';
 import 'package:forte_v2/widget/result.dart';
 
-import '../widget/answer.dart';
+import '../../widget/answer.dart';
 
 class TestsMediumScreen extends StatefulWidget {
   @override
