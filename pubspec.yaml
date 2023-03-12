@@ -85,7 +85,7 @@ flutter:
         - asset: assets/fonts/Myapp.ttf
     - family: Cormorant
       fonts:
-        - asset: assets/fonts/CormorantGaramond-MediumItalic.ttf
+        - asset: assets/fonts/CormorantGaramond-SemiBoldItalic.ttf
 
   #   - family: Schyler
   #     fonts:

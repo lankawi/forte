@@ -16,18 +16,21 @@ class Answer extends StatelessWidget {
     return GestureDetector(
       onTap: () => onChangeAnswer(isCorrect),
       child: Container(
-        margin: const EdgeInsets.all(20),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         padding: const EdgeInsets.all(10),
         width: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.brown, width: 1),
+          borderRadius: BorderRadius.circular(15),
           color: Colors.amber,
-          // border: Border.all(1),
-          // borderRadius: BorderRadius.circular(18.0),
         ),
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+              //color: Colors.white,
+              fontSize: 25
+          ),
         ),
       ),
     );

@@ -1,0 +1,79 @@
+import 'package:flutter/material.dart';
+import 'package:forte_v2/models/test_medium.dart';
+import 'package:forte_v2/myapp_icons.dart';
+import 'package:forte_v2/services/nav_bar.dart';
+import 'package:forte_v2/widget/progress_bar.dart';
+import 'package:forte_v2/widget/quiz.dart';
+import 'package:forte_v2/widget/result.dart';
+
+import '../widget/answer.dart';
+
+class TestsMediumScreen extends StatefulWidget {
+  @override
+  _TestsMediumScreenState createState() => _TestsMediumScreenState();
+}
+
+class _TestsMediumScreenState extends State<TestsMediumScreen> {
+
+  final QuestionData data = QuestionData();
+  int _countResult = 0;
+  int _questionIndex = 0;
+
+  List<Icon> _icons = [];
+
+  void _clearState() => setState(() {       //обнуление
+    _questionIndex = 0;
+    _countResult = 0;
+    _icons = [];
+  });
+
+  void _onChangeAnswer(bool isCorrect) => setState(() {
+    if (isCorrect) {
+      _icons.add(Icon(Myapp.music, color: Colors.lightGreen));
+      _countResult++;
+    } else {
+      _icons.add(Icon(Myapp.music, color: Colors.redAccent));
+    }
+
+    _questionIndex += 1;
+  });
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+        drawer: NavBar(),                     //выплывающая менюшка
+        backgroundColor: Colors.yellow[200],
+        appBar: AppBar(
+          title: Text('Легкий тест'),
+          centerTitle: true,
+        ),
+        body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              color: Colors.yellow[200]
+          ),
+          child: Column(
+            children: <Widget>[
+
+              ProgressBar(
+                icons: _icons,
+                count: _questionIndex,
+                total: data.questions.length,
+              ),
+
+              _questionIndex < data.questions.length
+                  ? Quiz(
+                index: _questionIndex,
+                questionData: data,
+                onChangeAnswer: _onChangeAnswer,
+              )
+                  : Result(
+                count: _countResult,
+                total: data.questions.length,
+                onClearState: _clearState,
+              )
+            ],
+          ),
+        )
+    );
+  }
+}

@@ -24,6 +24,10 @@ class ProgressBar extends StatelessWidget {
             fit: BoxFit.contain,
             child: Text(
               '$count - $total',
+              style: TextStyle(
+                  color: Colors.brown,
+                  fontSize: 25
+              ),
             ),
           ),
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widget_answer.dart';
+import 'answer.dart';
 
 class Quiz extends StatelessWidget {
 
@@ -18,9 +18,10 @@ class Quiz extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          padding: EdgeInsets.all(10.0),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text(
             questionData.questions[index].title,
+            style: TextStyle(fontSize: 25),
           ),
         ),
 

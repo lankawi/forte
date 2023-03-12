@@ -4,8 +4,9 @@ import 'package:forte_v2/myapp_icons.dart';
 import 'package:forte_v2/services/nav_bar.dart';
 import 'package:forte_v2/widget/progress_bar.dart';
 import 'package:forte_v2/widget/quiz.dart';
+import 'package:forte_v2/widget/result.dart';
 
-import '../widget/widget_answer.dart';
+import '../widget/answer.dart';
 
 class TestsEasyScreen extends StatefulWidget {
   @override
@@ -28,10 +29,10 @@ class _TestsEasyScreenState extends State<TestsEasyScreen> {
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
     if (isCorrect) {
-      _icons.add(Icon(Icons.brightness_1, color: Colors.lightGreen));
+      _icons.add(Icon(Myapp.music, color: Colors.lightGreen));
       _countResult++;
     } else {
-      _icons.add(Icon(Icons.brightness_1, color: Colors.redAccent));
+      _icons.add(Icon(Myapp.music, color: Colors.redAccent));
     }
 
     _questionIndex += 1;
@@ -42,7 +43,7 @@ class _TestsEasyScreenState extends State<TestsEasyScreen> {
       drawer: NavBar(),                     //выплывающая менюшка
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
-        title: Text('Легкий тест'),
+        title: Text('Легкий тест', style: TextStyle(fontSize: 28),),
         centerTitle: true,
       ),
       body: Container(
@@ -59,11 +60,17 @@ class _TestsEasyScreenState extends State<TestsEasyScreen> {
               total: data.questions.length,
             ),
 
-            Quiz(
+            _questionIndex < data.questions.length
+            ? Quiz(
               index: _questionIndex,
               questionData: data,
               onChangeAnswer: _onChangeAnswer,
-            ),
+            )
+            : Result(
+              count: _countResult,
+              total: data.questions.length,
+              onClearState: _clearState,
+            )
           ],
         ),
       )
