@@ -84,7 +84,7 @@ class TestsScreen extends StatelessWidget {
               ),
             ),
           ),
-          ],
+        ],
       ),
     );
   }
