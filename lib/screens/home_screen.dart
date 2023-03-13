@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:forte_v2/myapp_icons.dart';
 import 'package:forte_v2/screens/keyboard_screen.dart';
+import 'package:forte_v2/screens/muslit/muslit_screen.dart';
 import 'package:forte_v2/screens/piece/piece_screen.dart';
+import 'package:forte_v2/screens/solfeggio/solfeggio_screen.dart';
 import 'package:forte_v2/screens/tests/tests_screen.dart';
 
 import '../widget/home_container.dart';
@@ -22,15 +24,15 @@ class HomeScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 15,),
             GestureDetector(
-              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => TestsScreen()));},
+              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const SolfeggioScreen()));},
               child: const HomeContainer(text1: ' Сольфеджио', text2: ':3 урока', iconka: Myapp.note_beamed,),
             ),
             GestureDetector(
-              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => TestsScreen()));},
+              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const MuslitScreen()));},
               child: const HomeContainer(text1: '  Муз. литература', text2: ':2 урока', iconka: Myapp.book_open,),
             ),
             GestureDetector(
-              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => TestsScreen()));},
+              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const TestsScreen()));},
               child: const HomeContainer(text1: ' Тесты', text2: ':2 теста', iconka: Myapp.jigsaw_piece,),
             ),
             GestureDetector(

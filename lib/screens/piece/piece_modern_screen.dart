@@ -60,7 +60,7 @@ class ElegyForArctic extends StatelessWidget {
     return const YoutubePlayerExample(
         videourl: "https://www.youtube.com/watch?v=2DLnhdnSUVs",
         title: 'Ludovico Einaudi\n"Elegy for the Arctic"',
-        imageurl: 'Elegy-1.jpg');
+        imageurl: 'elegy/Elegy-1.jpg');
   }
 }
 
@@ -72,7 +72,7 @@ class UnaMattina extends StatelessWidget {
     return const YoutubePlayerExample(
         videourl: "https://www.youtube.com/watch?v=MPlkHxFA-Qg",
         title: 'Ludovico Einaudi\n"Una Mattina"',
-        imageurl: 'Una-1.jpg');
+        imageurl: 'una/Una-1.jpg');
   }
 }
 

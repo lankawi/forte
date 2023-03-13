@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:forte_v2/myapp_icons.dart';
 import 'package:forte_v2/screens/keyboard_screen.dart';
+import 'package:forte_v2/screens/muslit/muslit_screen.dart';
+import 'package:forte_v2/screens/piece/piece_screen.dart';
+import 'package:forte_v2/screens/solfeggio/solfeggio_screen.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/login_screen.dart';
@@ -15,7 +18,7 @@ class NavBar extends StatelessWidget {
       child: ListView(
         children: [
           GestureDetector(
-            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));},
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Row(
@@ -29,7 +32,7 @@ class NavBar extends StatelessWidget {
           ),
           const Divider(thickness: 2),                             // черта -----------
           GestureDetector(
-            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const SolfeggioScreen()));},
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Row(
@@ -42,7 +45,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const MuslitScreen()));},
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Row(
@@ -55,7 +58,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => TestsScreen()));},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const TestsScreen()));},
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Row(
@@ -81,7 +84,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const PieceScreen()));},
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Row(

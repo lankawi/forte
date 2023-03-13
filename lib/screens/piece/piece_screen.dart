@@ -23,12 +23,12 @@ class PieceScreen extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               width: double.infinity,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 2),
+                border: Border.all(color: Colors.brown, width: 2),
                 borderRadius: BorderRadius.circular(15),
                 color: Colors.yellow[200],
               ),
               child: const Center(
-                    child: Text('Классика', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25,),),
+                    child: Text('Классика', style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 25,),),
                   ),
             ),
           ),
